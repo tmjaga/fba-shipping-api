@@ -69,20 +69,36 @@ In the project folder run:
 composer install
 ```
 
-### 4. Start booking-app docker container
+### 5. Create .env file 
+
+In the project folder run:
+
+```bash
+cp .env.example .env
+```
+
+### 6. Generate application key
+
+In the project folder run:
+
+```bash
+php artisan key:generate
+```
+
+### 7. Create DB and import data
+
+In the project folder run:
+
+```bash
+php artisan migrate --seed
+```
+
+### 4. Start fba-shipping-api docker container
 
 In the project folder run:
 
 ```bash
 ./vendor/bin/sail up -d
-```
-
-### 5. Create DB and import data
-
-In the project folder run:
-
-```bash
-./vendor/bin/sail artisan migrate --seed
 ```
 
 After installation, Booking Api will be avaliable at http://localhost in Postman or other HTTP client for testing
