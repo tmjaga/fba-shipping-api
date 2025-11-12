@@ -69,7 +69,7 @@ In the project folder run:
 composer install
 ```
 
-### 5. Create .env file 
+### 4. Create .env file 
 
 In the project folder run:
 
@@ -77,7 +77,7 @@ In the project folder run:
 cp .env.example .env
 ```
 
-### 6. Generate application key
+### 5. Generate application key
 
 In the project folder run:
 
@@ -85,7 +85,7 @@ In the project folder run:
 php artisan key:generate
 ```
 
-### 7. Create DB and import data
+### 6. Create DB and import data
 
 In the project folder run:
 
@@ -93,17 +93,20 @@ In the project folder run:
 php artisan migrate --seed
 ```
 
-### 4. Start fba-shipping-api docker container
+### 7. Start fba-shipping-api application 
 
 In the project folder run:
+- For Docker
 
 ```bash
-./vendor/bin/sail up -d
+docker-compose up -d
 ```
+Api will be avaliable at http://localhost:8080/api
 
-After installation, Booking Api will be avaliable at http://localhost in Postman or other HTTP client for testing
-<br>
-To check email notifications you can use Mailpit email client avaliable at http://localhost:8025
+- For Laravel Herd: start Laravel Herd application
+
+Api will be avaliable at http://fba-shipping-api.test/api
+
 
 ## Usage
 
@@ -132,8 +135,10 @@ To check email notifications you can use Mailpit email client avaliable at http:
 Copy api-token value and
 add `Authorization: Bearer <api_token>` header to Secured Endpoints requests
 
-> If you are using Posman HTTP client for testing, you can import Booking API Collection from
-> `Booking API.postman_collection.json` file and configurate BOOKING-API Global Environment variable with copied api-token value. Don't forget to press Save button.
+> If you are using Posman HTTP client for testing, you can import FBA Shipping Collection from
+> `FBA Shipping.postman_collection.json` file and configurate api_token Global Environment variable with copied api-token value 
+> and base_url variable with `http://fba-shipping-api.test/api` or `http://localhost:8080/api`
+> Don't forget to press Save button.
 
 ### 2. Get Rooms List
 
