@@ -8,7 +8,7 @@ A simple API that sends fulfillment mock request to Amazon’s Fulfillment Netwo
 3. [Installation](#installation)
 4. [Usage](#usage)
     - [Login](#1-login-generate-token)
-    - [Get Rooms List](#2-fulfill-seller-order)
+    - [Fulfill Seller Order](#2-fulfill-seller-order)
     - [Logout](#3-logout)
 5. [Run Unit Tests](#run-unit-tests)
 
@@ -131,7 +131,7 @@ add `Authorization: Bearer <api_token>` header to Secured Endpoints requests
 > and base_url variable with `http://fba-shipping-api.test/api` or `http://localhost:8080/api`
 > Don't forget to press Save button.
 
-### 2. Fulfill seller order
+### 2. Fulfill Seller Order
 
 -   URL: /shipping/<buyer_id>/<order_id>
 -   Method: POST
